@@ -4,7 +4,6 @@ import java.util.function.Function;
 
 public class SearchParams {
     private static final Function<Integer, Integer> INCREMENT_BY_ONE = number -> number + 1;
-    private static final Function<Integer, Integer> DECREMENT_BY_ONE = number -> number - 1;
     private static final Function<Integer, Integer> KEEP_VALUE = number -> number;
     private static final Function<Integer, Integer> NEGATE = number -> - number;
     private static final Function<Integer, Integer> SET_TO_ZERO = number -> 0;

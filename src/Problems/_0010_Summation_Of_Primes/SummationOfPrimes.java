@@ -7,7 +7,7 @@ import Stats.RunInfo;
 import java.util.ArrayList;
 
 public class SummationOfPrimes {
-    private static int max = 2000000;
+    private static final int max = 2000000;
     public static void solutionNaive() {
         long sum = 2;
         for (int i = 3; Counter.countCondition(i < max); i += 2) {

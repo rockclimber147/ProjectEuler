@@ -4,7 +4,7 @@ import Stats.Counter;
 import Stats.RunInfo;
 
 public class SumSquareDifference {
-    private static long naturalNumberCount = 100;
+    private static final long naturalNumberCount = 100;
     public static void solutionNaive() {
         long sum = 0;
         long sumSquares = 0;
@@ -12,7 +12,7 @@ public class SumSquareDifference {
         for (int i = 1; Counter.countCondition(i <= naturalNumberCount); i++) {
             Counter.incrementLoopCount();
             sum += i;
-            sumSquares += i * i;
+            sumSquares += (long) i * i;
         }
 
         long solution = (sum * sum) - sumSquares;

@@ -4,7 +4,7 @@ import Stats.Counter;
 import Stats.RunInfo;
 
 public class SpecialPythagoreanTriplets {
-    private static int maximum = 1000;
+    private static final int maximum = 1000;
     public static void solutionNewtonsMethod() {
         for (int m = 1; Counter.countCondition(m < maximum); m++) {
             Counter.incrementLoopCount();

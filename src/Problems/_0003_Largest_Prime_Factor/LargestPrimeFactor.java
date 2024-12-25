@@ -7,7 +7,7 @@ import Stats.RunInfo;
 import java.util.ArrayList;
 
 public class LargestPrimeFactor {
-    private static long questionNumber = 600851475143L;
+    private static final long questionNumber = 600851475143L;
     public static void getLargestPrimeFactorEfficient() {
         ArrayList<Long> primeFactors = PrimeHelper.getPrimeFactors(questionNumber);
         System.out.println(primeFactors.getLast());
@@ -23,10 +23,6 @@ public class LargestPrimeFactor {
             }
         }
         System.out.println(primeFactors.getLast());
-    }
-
-    public static void setQuestionNumber(long number) {
-        questionNumber = number;
     }
 
     public static void main(String[] args) {

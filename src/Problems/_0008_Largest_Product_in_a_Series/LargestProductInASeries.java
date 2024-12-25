@@ -7,10 +7,10 @@ import Stats.RunInfo;
 import java.io.IOException;
 
 public class LargestProductInASeries {
-    private static String fileName = "src/Problems/_0008_Largest_Product_in_a_Series/number.txt";
+    private static final String fileName = "src/Problems/_0008_Largest_Product_in_a_Series/number.txt";
     private static final int CHAR_INT_OFFSET = 48;
     private static char[] chars;
-    private static int numbersToRead = 13;
+    private static final int numbersToRead = 13;
 
     private static boolean init() {
         String content = FileHelper.getFileContentsAsString(fileName);

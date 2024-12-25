@@ -7,7 +7,7 @@ import Stats.RunInfo;
 import java.util.Set;
 
 public class HighlyDivisibleTriangularNumber {
-    private static int factorCount = 500;
+    private static final int factorCount = 500;
 
 
     public static void solutionNaive() {

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Stack;
 
 public class LongestCollatzSequence {
-    private static int maxNumber = 1000000;
+    private static final int maxNumber = 1000000;
 
     private static long getNextCollatzNumber(long number) {
         if (Counter.countCondition(number % 2 == 0)) {

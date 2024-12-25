@@ -5,11 +5,7 @@ import Stats.Counter;
 import Stats.RunInfo;
 
 public class LargestPalindromeProduct {
-    private static int digitCount = 3;
-
-    public static void setDigitCount(int number) {
-        digitCount = number;
-    }
+    private static final int digitCount = 3;
 
     public static int getMaxNumber() {
         int number = 0;

@@ -10,7 +10,7 @@ public class LargestProductInAGrid {
     private static final String colDelimiter = " ";
 
     private static int[][] grid;
-    private static int searchWidth = 4;
+    private static final int searchWidth = 4;
     private static long maxProduct = 0;
 
     private static void init() {

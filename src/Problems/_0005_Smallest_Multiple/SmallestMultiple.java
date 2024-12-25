@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SmallestMultiple {
-    private static int maxDivisor = 20;
+    private static final int maxDivisor = 20;
     public static void smallestMultipleNaive() {
         long number = 1;
         while(Counter.countCondition(!hasAllDivisors(number))) {

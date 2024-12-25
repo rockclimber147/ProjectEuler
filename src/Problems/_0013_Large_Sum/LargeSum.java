@@ -4,10 +4,8 @@ import Helpers.FileHelper;
 import Stats.Counter;
 import Stats.RunInfo;
 
-import java.util.ArrayList;
-
 public class LargeSum {
-    private static String filePath = "src/Problems/_0013_Large_Sum/Numbers.txt";
+    private static final String filePath = "src/Problems/_0013_Large_Sum/Numbers.txt";
 
     private static String[] numbersArray;
 

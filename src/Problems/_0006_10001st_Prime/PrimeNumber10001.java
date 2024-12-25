@@ -5,7 +5,7 @@ import Stats.Counter;
 import Stats.RunInfo;
 
 public class PrimeNumber10001 {
-    private static long nthPrimeToFind = 10001;
+    private static final long nthPrimeToFind = 10001;
     public static void solution() {
         long numberToCheck = 1;
         int encounteredPrimes = 1;
