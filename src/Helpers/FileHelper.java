@@ -6,6 +6,8 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class FileHelper {
+    private static final String DEFAULT_COLUMN_DELIMITER = " ";
+    private static final String DEFAULT_ROW_DELIMITER = "\n";
     public static String getFileContentsAsString(final String filePath) {
         String content = null;
         try {
@@ -16,6 +18,10 @@ public class FileHelper {
             System.out.println("Error reading file");
         }
         return content;
+    }
+
+    public static int[][] getFileContentsAsGrid(final String filePath) {
+        return getFileContentsAsGrid(filePath, DEFAULT_ROW_DELIMITER, DEFAULT_COLUMN_DELIMITER);
     }
 
     public static int[][] getFileContentsAsGrid(final String filePath,
@@ -38,13 +44,8 @@ public class FileHelper {
     }
 
     public static void main(String[] args) {
-        int[][] grid = getFileContentsAsGrid("src/Problems/_0011_Largest_Product_In_A_Grid/Grid.txt", "\n", " ");
-        for (int[] row : grid) {
-            for (int num : row) {
-                if (num < 10) System.out.print("0");
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
+        DebugHelper.printNestedArray(getFileContentsAsGrid("src/Problems/_0011_Largest_Product_In_A_Grid/Grid.txt"));
+        DebugHelper.printNestedArray(getFileContentsAsGrid("src/Problems/_0018_Maximum_Path_Sum_I/Triangle.txt"));
+
     }
 }
