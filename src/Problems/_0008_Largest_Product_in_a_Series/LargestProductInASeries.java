@@ -1,6 +1,7 @@
 package Problems._0008_Largest_Product_in_a_Series;
 
 import Helpers.FileHelper;
+import Helpers.PatternHelper;
 import Stats.Counter;
 import Stats.RunInfo;
 
@@ -8,7 +9,6 @@ import java.io.IOException;
 
 public class LargestProductInASeries {
     private static final String fileName = "src/Problems/_0008_Largest_Product_in_a_Series/number.txt";
-    private static final int CHAR_INT_OFFSET = 48;
     private static char[] chars;
     private static final int numbersToRead = 13;
 
@@ -33,7 +33,7 @@ public class LargestProductInASeries {
             for (int i = minIndex; Counter.countCondition(i <= maxIndex); i++) {
                 Counter.incrementLoopCount();
 
-                currentProduct *= (chars[i] - CHAR_INT_OFFSET);
+                currentProduct *= PatternHelper.charToInt(chars[i]);
             }
 
             if (Counter.countCondition(currentProduct > longestProductSoFar)) {
@@ -69,14 +69,14 @@ public class LargestProductInASeries {
                 break;
             }
 
-            int currentValue = chars[maxIndex] - CHAR_INT_OFFSET;
+            int currentValue = PatternHelper.charToInt(chars[maxIndex]);
 
             if (Counter.countCondition(currentValue != 0)) {
                 currentProduct *= currentValue; // Add current value to the product
 
                 // Check if the window size exceeds the desired length
                 if (maxIndex - minIndex + 1 > numbersToRead) {
-                    currentProduct /= (chars[minIndex] - CHAR_INT_OFFSET);
+                    currentProduct /= PatternHelper.charToInt(chars[minIndex]);
                     minIndex++; // Move the window start forward
                 }
 
@@ -105,7 +105,7 @@ public class LargestProductInASeries {
                 break;
             }
 
-            int currentValue = chars[maxIndex] - CHAR_INT_OFFSET;
+            int currentValue = PatternHelper.charToInt(chars[maxIndex]);
 
             if (Counter.countCondition(currentValue == 0)) {
                 // If zero is found, reset and exit early

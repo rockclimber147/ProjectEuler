@@ -3,6 +3,11 @@ package Helpers;
 import Stats.Counter;
 
 public class PatternHelper {
+    public static final int CHAR_INT_OFFSET = 48;
+
+    public static int charToInt(char character) {
+        return character - CHAR_INT_OFFSET;
+    }
     public static boolean isPalindrome(long number) {
         int mostSignificantDigitPosition = (int) Math.log10(number) + 1;
         int leastSignificantDigitPosition = 1;
