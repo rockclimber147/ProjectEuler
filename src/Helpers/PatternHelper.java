@@ -45,4 +45,22 @@ public class PatternHelper {
         }
         return total;
     }
+
+    public static int getAmicableNumber(int input) {
+        int sumOfInputFactors = FactorHelper.getFactorSum(input) - input;
+
+        if (Counter.countCondition(sumOfInputFactors == input)) {
+            return -1;
+        }
+        int sumOfOutputFactors = FactorHelper.getFactorSum(sumOfInputFactors) - sumOfInputFactors;
+
+        if (Counter.countCondition(sumOfOutputFactors == input)) {
+            return sumOfInputFactors;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getAmicableNumber(220));
+    }
 }

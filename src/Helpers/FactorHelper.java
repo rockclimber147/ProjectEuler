@@ -23,7 +23,7 @@ public class FactorHelper {
     public static Set<Long> getAllFactorsFromPrimeFactors(long number) {
         Set<Long> factors = new HashSet<>();
         ArrayList<Long> primeFactors = PrimeHelper.getPrimeFactors(number);
-        factors.add(1L); // Start with 1 as a factor
+        factors.add(1L);
 
         for (int i = 0; Counter.countCondition(i < primeFactors.size()); i++) {
             long prime = primeFactors.get(i);
@@ -44,14 +44,13 @@ public class FactorHelper {
         return factors;
     }
 
-//    public static ArrayList<Long> getAllFactors(long number) {
-//        ArrayList<Long> primeFactors = PrimeHelper.getPrimeFactors(number);
-//        ArrayList<Long> allFactors = new ArrayList<>();
-//
-//    }
-public static void main(String[] args) {
-    for (int i = 2; i < 100; i ++) {
-        System.out.println(i + ": " + getAllFactorsNaive(i) + " " + getAllFactorsFromPrimeFactors(i));
+    public static int getFactorSum(int input) {
+        ArrayList<Long> factors = new ArrayList<>(getAllFactorsFromPrimeFactors(input));
+        int sum = 0;
+        for (int i = 0; Counter.countCondition(i < factors.size()); i++) {
+            Counter.incrementLoopCount();
+            sum += factors.get(i);
+        }
+        return sum;
     }
-}
 }
