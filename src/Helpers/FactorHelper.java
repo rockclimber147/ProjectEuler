@@ -44,13 +44,13 @@ public class FactorHelper {
         return factors;
     }
 
-    public static int getFactorSum(int input) {
+    public static int getSumOfProperDivisors(int input) {
         ArrayList<Long> factors = new ArrayList<>(getAllFactorsFromPrimeFactors(input));
         int sum = 0;
         for (int i = 0; Counter.countCondition(i < factors.size()); i++) {
             Counter.incrementLoopCount();
             sum += factors.get(i);
         }
-        return sum;
+        return sum - input;
     }
 }

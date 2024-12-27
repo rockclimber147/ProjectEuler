@@ -47,12 +47,12 @@ public class PatternHelper {
     }
 
     public static int getAmicableNumber(int input) {
-        int sumOfInputFactors = FactorHelper.getFactorSum(input) - input;
+        int sumOfInputFactors = FactorHelper.getSumOfProperDivisors(input);
 
         if (Counter.countCondition(sumOfInputFactors == input)) {
             return -1;
         }
-        int sumOfOutputFactors = FactorHelper.getFactorSum(sumOfInputFactors) - sumOfInputFactors;
+        int sumOfOutputFactors = FactorHelper.getSumOfProperDivisors(sumOfInputFactors);
 
         if (Counter.countCondition(sumOfOutputFactors == input)) {
             return sumOfInputFactors;
