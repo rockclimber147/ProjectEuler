@@ -35,4 +35,14 @@ public class PatternHelper {
             return (int) ((number % divisor) / (divisor / 10));
         }
     }
+
+    public static int sumOfDigits(final String number) {
+        char[] digits = number.toCharArray();
+        int total = 0;
+        for (int i = 0; Counter.countCondition(i < digits.length); i++) {
+            Counter.incrementConditionalCount();
+            total += PatternHelper.charToInt(digits[i]);
+        }
+        return total;
+    }
 }

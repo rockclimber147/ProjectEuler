@@ -2,6 +2,8 @@ package Helpers;
 
 import Stats.Counter;
 
+import java.math.BigInteger;
+
 public class CombinatoricsHelper {
 
     public static long choose(int total, int toChoose) {
@@ -15,6 +17,15 @@ public class CombinatoricsHelper {
         }
 
         return answer;
+    }
+
+    public static BigInteger factorial(int input) {
+        BigInteger factorial = new BigInteger(input + "");
+        for (int i = input - 1; Counter.countCondition(i > 1); i--) {
+            Counter.incrementLoopCount();
+            factorial = factorial.multiply(new BigInteger(i + ""));
+        }
+        return factorial;
     }
 
     public static void main(String[] args) {
