@@ -2,6 +2,8 @@ package Helpers;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
@@ -18,6 +20,15 @@ public class FileHelper {
             System.out.println("Error reading file");
         }
         return content;
+    }
+    public static void writeStringToTextFile(final String content, final String filePath) {
+        try {
+            Path path = Paths.get(filePath);
+            Files.write(path, content.getBytes());
+            System.out.println("File written successfully!");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
     }
 
     public static int[][] getFileContentsAsGrid(final String filePath) {
