@@ -15,6 +15,10 @@ public class QuestionFormatter {
         map.put("\\times", "x");
         map.put("\\ne", "!=");
         map.put("\\cdots", "...");
+        map.put("&amp;=", "=");
+        map.put("\\\\", "");
+        map.put("\\end\\{align\\}", "");
+        map.put("\\begin\\{align\\}", "");
 
         return map;
     }
@@ -41,6 +45,6 @@ public class QuestionFormatter {
     }
 
     public static void main(String[] args) {
-        formatQuestion("src/Problems/_0024_Lexicographic_Permutations/Question.txt");
+        formatQuestion("src/Problems/_0025_1000_digit_Fibonacci_Number/Question.txt");
     }
 }
