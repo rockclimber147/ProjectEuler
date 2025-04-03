@@ -1,4 +1,4 @@
-package Problems._0033_Digit_Cancelling_Fractions;
+package Problems._0026To0050._0026_Reciprocal_Cycles._0033_Digit_Cancelling_Fractions;
 
 import Helpers.FractionHelper;
 import Stats.Counter;
