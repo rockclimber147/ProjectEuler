@@ -1,4 +1,4 @@
-package Problems._0059_XOR_Decryption;
+package Problems._0051to_0075._0059_XOR_Decryption;
 
 import Helpers.FileHelper;
 

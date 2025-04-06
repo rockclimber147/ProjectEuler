@@ -17,6 +17,13 @@ public class RunInfo {
         return endTime - startTime;
     }
 
+    public static void showRuntimeMs(Runnable action) {
+        long startTime = System.currentTimeMillis();
+        action.run();
+        long endTime = System.currentTimeMillis();
+        System.out.println("Finished in " + (endTime - startTime) + "ms");
+    }
+
     public static void reset() {
         Counter.reset();
     }

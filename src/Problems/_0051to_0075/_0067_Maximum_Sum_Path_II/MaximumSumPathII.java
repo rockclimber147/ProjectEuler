@@ -1,4 +1,4 @@
-package Problems._0067_Maximum_Sum_Path_II;
+package Problems._0051to_0075._0067_Maximum_Sum_Path_II;
 
 import Problems._0001To00025._0018_Maximum_Path_Sum_I.MaximumPathSumI;
 import Stats.RunInfo;
