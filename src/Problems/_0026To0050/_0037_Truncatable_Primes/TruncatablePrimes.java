@@ -1,4 +1,4 @@
-package Problems._0026To0050._0026_Reciprocal_Cycles._0037_Truncatable_Primes;
+package Problems._0026To0050._0037_Truncatable_Primes;
 
 import Helpers.PrimeHelper;
 import Stats.RunInfo;

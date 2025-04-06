@@ -1,4 +1,4 @@
-package Problems._0026To0050._0026_Reciprocal_Cycles._0027_quadratic_primes;
+package Problems._0026To0050._0027_quadratic_primes;
 
 import Helpers.PrimeHelper;
 
