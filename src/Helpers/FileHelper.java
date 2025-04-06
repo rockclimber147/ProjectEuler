@@ -1,10 +1,15 @@
 package Helpers;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileHelper {
@@ -52,6 +57,44 @@ public class FileHelper {
             rowIndex++;
         }
         return grid;
+    }
+
+    public static Iterator<String> readFileLineByLine(String filePath) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filePath)); // Create BufferedReader to read file
+            return new Iterator<String>() {
+                String currentLine;
+
+                // Method to check if there's another line
+                @Override
+                public boolean hasNext() {
+                    try {
+                        currentLine = br.readLine();
+                        return currentLine != null;  // If there's a next line, return true
+                    } catch (IOException e) {
+                        return false; // Return false if reading the file fails
+                    }
+                }
+
+                // Method to get the next line
+                @Override
+                public String next() {
+                    return currentLine;
+                }
+
+                // Optional: Close the reader when the iterator is closed
+                public void close() {
+                    try {
+                        br.close();
+                    } catch (IOException e) {
+                        System.err.println("Error closing the file reader: " + e.getMessage());
+                    }
+                }
+            };
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            return null;
+        }
     }
 
     public static void main(String[] args) {

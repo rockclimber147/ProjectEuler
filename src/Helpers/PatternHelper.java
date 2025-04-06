@@ -60,7 +60,33 @@ public class PatternHelper {
         return -1;
     }
 
+    public static long binaryRepresentationAsDecimal(long decimal) {
+        long binaryRep = 0;
+        long mask = 1;
+        long add = 1;
+        while (mask <= decimal) {
+            if ((mask & decimal) > 0) binaryRep += add;
+            mask <<= 1;
+            add *= 10;
+        }
+        return binaryRep;
+    }
+
+    public static long setNthDigitToZero(long number, int n) {
+        long leftPart = number / (long) Math.pow(10, n);
+
+        long rightPart = number % (long) Math.pow(10, n);
+
+        rightPart = rightPart % (long) Math.pow(10, n - 1);
+
+        return leftPart * (long) Math.pow(10, n) + rightPart;
+    }
+
     public static void main(String[] args) {
-        System.out.println(getAmicableNumber(220));
+        for (int i = 1; i <= 16; i++) {
+            System.out.println(binaryRepresentationAsDecimal(i));
+        }
+
+//        System.out.println(setNthDigitToZero(1234, 1));
     }
 }
