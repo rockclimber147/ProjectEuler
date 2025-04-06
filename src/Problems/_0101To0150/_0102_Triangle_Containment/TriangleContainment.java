@@ -1,6 +1,7 @@
 package Problems._0101To0150._0102_Triangle_Containment;
 
 import Helpers.FileHelper;
+import Stats.RunInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,12 +20,12 @@ public class TriangleContainment {
             ArrayList<Integer> vals = new ArrayList<>(Arrays.stream(lines.next().split(","))
                     .map(Integer::parseInt)
                     .toList());
-            if (new Triangle(vals).containsOrigin()) totalContainingOrigin++;
+            if (new Triangle(vals).contains(new int[] {0, 0})) totalContainingOrigin++;
         }
         System.out.println(totalContainingOrigin);
     }
 
     public static void main(String[] args) {
-        solution();
+        RunInfo.showRuntimeMs(TriangleContainment::solution);
     }
 }
