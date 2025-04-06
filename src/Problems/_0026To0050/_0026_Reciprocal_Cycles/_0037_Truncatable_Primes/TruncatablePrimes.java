@@ -11,6 +11,7 @@ public class TruncatablePrimes {
     private static HashSet<Long> foundPrimes;
     private static ArrayList<Long> candidates;
     private static HashSet<Long> foundNonPrimes;
+    private static final int[] appendCandidates = new int[] { 1, 3, 7, 9 };
 
     private static void init() {
         foundTruncatablePrimes = new ArrayList<>();
@@ -23,7 +24,7 @@ public class TruncatablePrimes {
         while (foundTruncatablePrimes.size() < maxTruncatablePrimes) {
             ArrayList<Long> newCandidates = new ArrayList<>();
             for (long number: candidates) {
-                for (int toAppend = 1; toAppend < 10; toAppend += 2) {
+                for (int toAppend : appendCandidates) {
                     long newNumber = number * 10 + toAppend;
                     if (checkPrime(newNumber)) {
                         newCandidates.add(newNumber);
@@ -32,7 +33,7 @@ public class TruncatablePrimes {
             }
 
             for (long candidate: candidates) {
-                if (isTruncatablePrime(candidate)) {
+                if (isLeftToRightTruncatablePrime(candidate)) {
                     foundTruncatablePrimes.add(candidate);
                 }
             }
@@ -42,7 +43,6 @@ public class TruncatablePrimes {
         long sum = 0;
         for (long truncatablePrime: foundTruncatablePrimes) {
             sum += truncatablePrime;
-            System.out.println(truncatablePrime);
         }
         System.out.println("sum: " + sum);
     }
@@ -58,7 +58,7 @@ public class TruncatablePrimes {
         return false;
     }
 
-    private static boolean isTruncatablePrime(long number) {
+    private static boolean isLeftToRightTruncatablePrime(long number) {
         if (number < 10) return false;
         String numString = number + "";
         for (int i = 1; i < numString.length(); i++) {
