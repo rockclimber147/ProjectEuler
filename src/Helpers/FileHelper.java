@@ -79,20 +79,34 @@ public class FileHelper {
                 public String next() {
                     return currentLine;
                 }
-
-                // Optional: Close the reader when the iterator is closed
-                public void close() {
-                    try {
-                        br.close();
-                    } catch (IOException e) {
-                        System.err.println("Error closing the file reader: " + e.getMessage());
-                    }
-                }
             };
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
             return null;
         }
+    }
+
+    public static Integer[][] readAdjacencyMatrixFromFile(String filePath,
+                                                          final String rowDelimiter,
+                                                          final String colDelimiter) {
+        String contents = getFileContentsAsString(filePath);
+        String[] rows = contents.split(rowDelimiter);
+        Integer[][] grid = new Integer[rows.length][];
+        int rowIndex = 0;
+        for (String row : rows) {
+            String[] cols = row.split(colDelimiter);
+            Integer[] formattedCols = new Integer[cols.length];
+            for (int i = 0; i< cols.length; i++) {
+                try {
+                    formattedCols[i] = Integer.parseInt(cols[i].replaceAll("\\s", ""));
+                } catch (NumberFormatException e) {
+                    formattedCols[i] = null;
+                }
+            }
+            grid[rowIndex] = formattedCols;
+            rowIndex++;
+        }
+        return grid;
     }
 
     public static void main(String[] args) {

@@ -162,8 +162,6 @@ public class MaxSumSubsequence {
     }
 
     public static void main(String[] args) {
-        RunInfo.showRuntimeMs(MaxSumSubsequence::solutionTest);
         RunInfo.showRuntimeMs(MaxSumSubsequence::solution);
-        RunInfo.showRuntimeMs(MaxSumSubsequence::solutionConcurrent);
     }
 }
